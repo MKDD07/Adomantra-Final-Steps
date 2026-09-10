@@ -289,13 +289,7 @@ var swiper = new Swiper(".testimonial4-slider", {
     992: {
       slidesPerView: 3,
       spaceBetween: 20,
-    },
-
-    // Large desktops
-    1800: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    },
+    }
   },
 });
   const clientsSwiper = new Swiper(".clients-line7__slider", {
@@ -1588,6 +1582,34 @@ var swiper = new Swiper(".testimonial4-slider", {
   }); // end document.ready — Job Accordion
 
 
+
+  // ==========================================
+  //  Dynamic .about-us-spacing padding-top
+  //  = header height + 30px
+  // ==========================================
+  function updateAboutUsSpacing() {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var headerHeight = header.getBoundingClientRect().height;
+    var paddingTop = headerHeight + 30;
+    var targets = document.querySelectorAll('.about-us-spacing');
+    targets.forEach(function (el) {
+      el.style.paddingTop = paddingTop + 'px';
+    });
+  }
+
+  // Run once on load (after fonts/images settle)
+  window.addEventListener('load', updateAboutUsSpacing);
+
+  // Also run immediately in case DOM is already ready
+  updateAboutUsSpacing();
+
+  // Update on resize so responsive header height changes are respected
+  var _aboutUsResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(_aboutUsResizeTimer);
+    _aboutUsResizeTimer = setTimeout(updateAboutUsSpacing, 100);
+  });
 
 })(jQuery);
 
