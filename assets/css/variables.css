@@ -1,0 +1,111 @@
+:root {
+  /* Brand */
+  --primary-color: #1257A2;
+  --primary-hover: #0D3F76;
+  --color-primary: #1257A2;
+  --color-primary-dark: #0D3F76;
+  --color-accent: #F4C400;
+
+  /* Vibrant Accents */
+  --sunset: #FF8427;
+  --fire: #EF4444;
+  --ocean: #0EA5E9;
+  --purple: #8B5CF6;
+
+  /* Neutrals & Greys */
+  --neutral-50: #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
+
+  --color-black: #111111;
+  --color-text: #252525;
+  --color-muted: #64748B;
+
+  --color-white: #FFFFFF;
+  --color-surface: #F7F7F5;
+  --color-surface-dark: #0D3F76;
+  --color-border: #E5E5E5;
+  --color-border-dark: rgba(255,255,255,0.18);
+
+  /* Typography */
+  --font-primary: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font_google_sans_flex: 'Google Sans Text', 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-normal: 400;
+  --font-medium: 450;
+  --weight-regular: 400;
+  --weight-medium: 450;
+  --weight-semibold: 500;
+
+  /* Font Sizes */
+  --text-2xs: 0.65rem;
+  --text-xs: 0.75rem;
+  --text-2sm: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+
+  --h1: clamp(2.4rem, 4.5vw, 3.8rem);
+  --h2: clamp(2rem, 3.5vw, 3rem);
+  --h3: clamp(1.4rem, 2.2vw, 2rem);
+  --h4: 1.25rem;
+  --h5: 1.1rem;
+  --h6: 0.95rem;
+
+  --h1-size: clamp(3rem, 6vw, 6.5rem);
+  --h2-size: clamp(2.2rem, 4vw, 3rem);
+  --h3-size: clamp(1.3rem, 2vw, 2rem);
+  --p-size: clamp(1rem, 1.1vw, 1.1875rem);
+  --eyebrow-size: 0.8125rem;
+
+  /* Spacings */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-28: 112px;
+
+  /* Layout */
+  --page-width: 1440px;
+  --page-padding: 24px;
+  --section-padding: 80px;
+  --section-padding-y: 60px;
+
+  --container-width: 1800px;
+  --gutter: 40px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --rounded-input: 12px;
+  --rounded-card: 20px;
+  --rounded-button: 100px;
+
+  --section-space: 120px;
+  --section-space-mobile: 72px;
+
+  /* Transitions & Animations */
+  --animation-fast: 0.25s ease;
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.6s cubic-bezier(.22,1,.36,1);
+
+  --header-h: 92px;
+  --header-h-scrolled: 72px;
+}
