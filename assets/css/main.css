@@ -14400,7 +14400,6 @@ body.no-scroll {
 
 .brand-card {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   height: 100px;
   display: flex;
@@ -14414,7 +14413,6 @@ body.no-scroll {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: grayscale(1) opacity(0.6);
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
