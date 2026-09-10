@@ -1583,43 +1583,7 @@ var swiper = new Swiper(".testimonial4-slider", {
 
 
 
-  // ==========================================
-  //  Dynamic .about-us-spacing padding-top
-  //  = header height + 30px
-  // ==========================================
-  function updateAboutUsSpacing() {
-    var header = document.querySelector('.site-header');
-    if (!header) return;
-    var headerHeight = header.getBoundingClientRect().height;
-    if (headerHeight <= 0) return; // layout not ready yet, skip
-    var paddingTop = headerHeight + 30;
-    document.querySelectorAll('.about-us-spacing').forEach(function (el) {
-      el.style.paddingTop = paddingTop + 'px';
-    });
-  }
 
-  // Retry until the header has a real painted height
-  function applyAboutUsSpacingWhenReady() {
-    var header = document.querySelector('.site-header');
-    if (header && header.getBoundingClientRect().height > 0) {
-      updateAboutUsSpacing();
-    } else {
-      requestAnimationFrame(applyAboutUsSpacingWhenReady);
-    }
-  }
-
-  // Start as soon as DOM is parsed
-  document.addEventListener('DOMContentLoaded', applyAboutUsSpacingWhenReady);
-
-  // Also fire on full load to catch any late layout shifts
-  window.addEventListener('load', updateAboutUsSpacing);
-
-  // Update on resize (debounced)
-  var _aboutUsResizeTimer;
-  window.addEventListener('resize', function () {
-    clearTimeout(_aboutUsResizeTimer);
-    _aboutUsResizeTimer = setTimeout(updateAboutUsSpacing, 100);
-  });
 
 })(jQuery);
 
