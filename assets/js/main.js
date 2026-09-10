@@ -1591,20 +1591,30 @@ var swiper = new Swiper(".testimonial4-slider", {
     var header = document.querySelector('.site-header');
     if (!header) return;
     var headerHeight = header.getBoundingClientRect().height;
+    if (headerHeight <= 0) return; // layout not ready yet, skip
     var paddingTop = headerHeight + 30;
-    var targets = document.querySelectorAll('.about-us-spacing');
-    targets.forEach(function (el) {
+    document.querySelectorAll('.about-us-spacing').forEach(function (el) {
       el.style.paddingTop = paddingTop + 'px';
     });
   }
 
-  // Run once on load (after fonts/images settle)
+  // Retry until the header has a real painted height
+  function applyAboutUsSpacingWhenReady() {
+    var header = document.querySelector('.site-header');
+    if (header && header.getBoundingClientRect().height > 0) {
+      updateAboutUsSpacing();
+    } else {
+      requestAnimationFrame(applyAboutUsSpacingWhenReady);
+    }
+  }
+
+  // Start as soon as DOM is parsed
+  document.addEventListener('DOMContentLoaded', applyAboutUsSpacingWhenReady);
+
+  // Also fire on full load to catch any late layout shifts
   window.addEventListener('load', updateAboutUsSpacing);
 
-  // Also run immediately in case DOM is already ready
-  updateAboutUsSpacing();
-
-  // Update on resize so responsive header height changes are respected
+  // Update on resize (debounced)
   var _aboutUsResizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(_aboutUsResizeTimer);
