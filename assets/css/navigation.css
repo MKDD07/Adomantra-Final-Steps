@@ -485,7 +485,7 @@ body {
 .nav-mega-dropdown.is-open .is-mega-menu {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: unset;
   transform: translateX(-50%) translateY(0);
   transition-delay: 0s;
 }
