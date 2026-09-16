@@ -48,38 +48,7 @@ const initNavigation = () => {
   }
 
   /* ---------------- 1b. DESKTOP DROPDOWNS & MEGA DROPDOWN ---------------- */
-  document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
-    const toggle = dropdown.querySelector(".nav-dropdown-toggle");
-    let closeTimer;
-
-    const open = () => {
-      clearTimeout(closeTimer);
-      document.querySelectorAll(".nav-dropdown.is-open").forEach((d) => {
-        if (d !== dropdown) d.classList.remove("is-open");
-      });
-      dropdown.classList.add("is-open");
-    };
-
-    const close = () => {
-      closeTimer = setTimeout(() => dropdown.classList.remove("is-open"), 150);
-    };
-
-    dropdown.addEventListener("mouseenter", open);
-    dropdown.addEventListener("mouseleave", close);
-
-    if (toggle) {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        dropdown.classList.contains("is-open") ? dropdown.classList.remove("is-open") : open();
-      });
-    }
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav-dropdown")) {
-      document.querySelectorAll(".nav-dropdown.is-open").forEach((d) => d.classList.remove("is-open"));
-    }
-  });
+  // Handled natively via CSS :hover
 
   /* ---------------- 2. MOBILE NAVIGATION DRAWER ---------------- */
   const hamburger = document.querySelector(".hamburger");
